@@ -1,0 +1,26 @@
+/* <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<body>
+    <div id="app">
+      <input :type='type1'>        <!-- v-bind 생략 가능 -->
+      <input v-bind:type='type2'>
+      <a :href='url'>url</a>
+      <p v-bind:class='class1'>v-bind 클래스지정</p>
+      <p v-bind:class='[class1, class2]'>다중 클래스 지정</p>
+      <p v-bind:class="{'test-class1': isON}">클래스 ON/OFF</p>  <!-- isON의 값이 true/false-->
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          url:'https://naver.com',
+          type1:'radio',
+          type2:'text',
+          class1:'test-class1',
+          class2:'test-class2',
+          isON: true
+        }
+      })
+    </script>
+  </body>

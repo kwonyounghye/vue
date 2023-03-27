@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h2>컴포넌트에 값을 전달하는 예제</h2>
+    <div id="app">
+      <!--my-name태그로 myName 프로퍼티에 값을 전달한다.-->
+      <my-component my-name="철수"></my-component>
+      <my-component my-name="영희"></my-component>
+      <my-component></my-component>
+    </div>
+
+    <script>
+      var MyComponent = {
+        template: '<p class="my-comp">나는 {{ myName }} 입니다.</p>',
+        props: {
+          myName: String	//my-name으로부터 값을 받는다.
+        },
+      }
+      new Vue({
+        el: '#app',
+        components: {
+          'my-component': MyComponent
+        }
+      })
+    </script>
+  </body>

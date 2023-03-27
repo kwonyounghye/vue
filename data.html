@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </header>
+  <body>
+    <div id="app">
+      <p> {{ myText }} </p>  <!--myText의 값 출력-->
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',          //id="app"
+        data: {              
+          myText:'Hello!!!'  //myText라는 프로퍼티
+        }
+      })
+    </script>
+  </body>
+</html>

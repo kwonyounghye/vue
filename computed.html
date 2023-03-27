@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+      <input v-model.number="price" type="number">원 x
+      <input v-model.number="count" type="number">개
+      <p>　　　합계 {{ sum }} 원</p>
+      <p>세금포함 {{ taxIncluded }} 원</p>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          price: 100,
+          count: 1
+        },
+        <!--computed의 함수들은 항상 값을 반환해야하고, 함수 내부의 프로퍼티가 변경되면 실행된다.-->
+        computed: {
+          sum: function () {
+            return this.price * this.count;
+          },
+          taxIncluded: function() {
+            return this.sum * 1.08;
+          }
+        }
+      })
+    </script>
+  </body>

@@ -1,0 +1,18 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+      <p>{{ myPrice * 1.08 }}</p>
+      <p>{{ "안녕하세요~ "+ myName + "님" }}</p>
+      <p>{{ myName.substr(0,1) }}</p>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          myPrice:500,       //숫자형
+          myName:'홍길동'    //문자형
+        }
+      })
+    </script>
+  </body>

@@ -1,0 +1,42 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+      <ul>
+        <!--arr배열의 각 요소를 item에 담는다-->
+        <li v-for="item in arr">{{ item }}</li><br>
+
+        <!--object의 key값과 value를 불러와 출력가능-->
+        <li v-for="(value, key) in obj">{{ key }} : {{ value }}</li><br>
+
+        <!--objectArray의 item(Object)를 출력-->
+        <li v-for="(item) in objArr">{{ item.a}} : {{ item.b }} : {{ item.c }}</li><br>
+
+        <!--입력값을 추가 하는 기능-->
+        <input v-model="num">
+        <button v-on:click="add(num)">add</button>
+        <button v-on:click="deletes()">delete</button>
+        <li v-for="item in pushArr">{{item}}</li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          arr: ['쨈빵','멜론빵','크로와상'],
+          obj: {'a':1, 'b':2, 'c':3},
+          objArr: [{'a':1, 'b':2, 'c':3}, {'a':4, 'b':5, 'c':6}],
+          pushArr: [],
+          num:0
+        },
+        methods: {
+          add(val) {
+            this.pushArr.push(val);
+          },
+          deletes() {
+            this.pushArr.pop();
+          }
+        }
+      })
+    </script>
+  </body>
